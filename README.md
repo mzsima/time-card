@@ -1,8 +1,18 @@
 # timecard
 
-A new Flutter project.
+【作成中】そのうちタイムカードになる予定。　Flutter Web
+## 作業メモ
 
-## Getting Started
+3/7
+JSのライブラリを使いたいので、package:jsを動かしてみる。
+それようにこれを、あれこれ。（https://pub.dev/packages/js）
+```
+flutter pub add js && flutter pub get
+```
+
+
+## 参考
+Flutter で作ってます。
 
 This project is a starting point for a Flutter application.
 

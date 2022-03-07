@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:timecard/bridge_js.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,6 +31,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  void _hello() {
+    helloJS();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => {},
+        onPressed: _hello,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
