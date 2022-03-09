@@ -3,6 +3,18 @@
 【作成中】そのうちタイムカードになる予定。　Flutter Web
 ## 作業メモ
 
+3/10
+Web3.storage (https://web3.storage/) を使いたいので、この間書いたpackage:jsを使って連動させる。
+npmのライブラリしかないので、esbuildで一つのファイルにしてそれを利用したいのだけど、
+綺麗にバンドルする方法がわからず、出力された out.js を手動で最初と最後の括弧を外したりしてなんとか動かしてみた。
+こんな感じで、ビルドして
+```
+cd js_bundle
+npm run build
+cp out.js ../web/out.js // <- 要：手作業で使うfunctionが見えるように調整
+```
+
+
 3/7
 JSのライブラリを使いたいので、package:jsを動かしてみる。
 それようにこれを、あれこれ。（https://pub.dev/packages/js）

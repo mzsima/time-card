@@ -1,11 +1,15 @@
 @JS()
-library hello;
+// library hello;
+library out;
 
 import 'package:js/js.dart';
 
-void helloJS() {
-  hello();
+@JS()
+external void hello();
+
+void retrieve() {
+  retrieveFiles();
 }
 
 @JS()
-external void hello();
+external void retrieveFiles();

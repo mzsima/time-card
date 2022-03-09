@@ -31,8 +31,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  void _hello() {
-    helloJS();
+  void _onClick() {
+    retrieve();
   }
 
   @override
@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _hello,
+        onPressed: _onClick,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
