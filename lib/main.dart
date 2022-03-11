@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:timecard/bridge_js.dart';
+import 'package:timecard/clock.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,7 +47,11 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'まだ何もない',
+              '試しに時計を配置',
+            ),
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: const AnalogClock(),
             ),
             Text(
               'Hello',
