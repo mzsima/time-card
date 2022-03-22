@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timecard/bridge_js.dart';
 import 'package:timecard/clock.dart';
+import 'package:timecard/timestamp/cubit/timestamp_cubit.dart';
+import 'package:timecard/timestamp/view/timestamp_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +34,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   void _onClick() {
     retrieve();
   }
@@ -46,17 +48,15 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
+            Text(
               '試しに時計を配置',
             ),
             Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: const AnalogClock(),
+              padding: EdgeInsets.all(24.0),
+              child: AnalogClock(),
             ),
-            Text(
-              'Hello',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+            BlocProvider(
+                create: (_) => TimestampCubit(), child: TimestampView())
           ],
         ),
       ),
