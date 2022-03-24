@@ -1,7 +1,13 @@
 import 'package:bloc/bloc.dart';
-import 'package:intl/intl.dart';
 
-class TimestampCubit extends Cubit<String> {
-  TimestampCubit() : super("00:00");
-  void stamp() => emit(DateFormat('HH:mm').format(DateTime.now()));
+class TimestampCubit extends Cubit<Map<String, DateTime>> {
+  TimestampCubit() : super({});
+
+  void stamp() {
+    if (state.isEmpty) {
+      emit({"start": DateTime.now()});
+    } else if (!state.containsKey("end") && state.containsKey("start")) {
+      emit({...state, "end": DateTime.now()});
+    }
+  }
 }
