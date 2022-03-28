@@ -11,8 +11,13 @@ class TimestampView extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     return Center(
       child: Column(children: [
-        BlocBuilder<TimestampCubit, Map<String, DateTime>>(
-            builder: (context, state) {
+        BlocConsumer<TimestampCubit, Map<String, DateTime>>(
+            listener: (context, state) {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text("Hello SnackBar!"),
+            duration: Duration(seconds: 3),
+          ));
+        }, builder: (context, state) {
           textFrom(key) => state.containsKey(key)
               ? DateFormat('HH:mm').format(state[key]!)
               : "--:--";

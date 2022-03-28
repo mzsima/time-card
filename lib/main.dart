@@ -41,30 +41,24 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              '試しに時計を配置',
-            ),
-            Padding(
-              padding: EdgeInsets.all(24.0),
-              child: AnalogClock(),
-            ),
-            BlocProvider(
-                create: (_) => TimestampCubit(), child: TimestampView())
-          ],
+        appBar: AppBar(
+          title: Text(widget.title),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _onClick,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                '試しに時計を配置',
+              ),
+              Padding(
+                padding: EdgeInsets.all(24.0),
+                child: AnalogClock(),
+              ),
+              BlocProvider(
+                  create: (_) => TimestampCubit(), child: TimestampView())
+            ],
+          ),
+        ));
   }
 }
