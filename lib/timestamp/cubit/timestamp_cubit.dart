@@ -11,3 +11,10 @@ class TimestampCubit extends Cubit<Map<String, DateTime>> {
     }
   }
 }
+
+class TimestampListCubit extends Cubit<List<DateTime>> {
+  TimestampListCubit() : super([]);
+  void stamp() {
+    emit([...state, DateTime.now()]);
+  }
+}

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timecard/bridge_js.dart';
 import 'package:timecard/clock.dart';
 import 'package:timecard/timestamp/cubit/timestamp_cubit.dart';
-import 'package:timecard/timestamp/view/timestamp_view.dart';
+import 'package:timecard/timestamp/view/timestamp_list_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -56,7 +56,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: AnalogClock(),
               ),
               BlocProvider(
-                  create: (_) => TimestampCubit(), child: TimestampView())
+                  // create: (_) => TimestampCubit(), child: TimestampView()
+                  create: (_) => TimestampListCubit(),
+                  child: TimestampListView())
             ],
           ),
         ));
