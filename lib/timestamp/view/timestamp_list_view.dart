@@ -21,24 +21,33 @@ class TimestampListView extends StatelessWidget {
               ),
               side: const BorderSide(),
             ),
-            onPressed: () => context.read<TimestampListCubit>().stamp(),
+            onPressed: null,
           ),
         ),
-        BlocBuilder<TimestampListCubit, List<DateTime>>(
+        BlocBuilder<TimestampListCubit, List<DateTimePair>>(
             builder: (context, state) {
-          return ListView.builder(
-            shrinkWrap: true,
-            itemCount: state.length,
-            itemBuilder: (context, index) {
-              final item = state[index];
-              return Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(DateFormat('HH:mm').format(item),
-                      textAlign: TextAlign.center),
-                ),
-              );
-            },
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 80),
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: state.length,
+              itemBuilder: (context, index) {
+                final item = state[index];
+                return Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(DateFormat('MM/dd').format(item.from)),
+                        Text(DateFormat('HH:mm').format(item.from)),
+                        Text(DateFormat('HH:mm').format(item.to)),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
           );
         }),
       ]),

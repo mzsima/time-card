@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               BlocProvider(
                   // create: (_) => TimestampCubit(), child: TimestampView()
-                  create: (_) => TimestampListCubit(),
+                  create: (_) => TimestampListCubit()..getAll(),
                   child: TimestampListView())
             ],
           ),
